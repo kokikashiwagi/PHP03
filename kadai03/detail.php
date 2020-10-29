@@ -14,9 +14,9 @@ $pdo = db_conn();
 // $ctn= strval($id); 
 
 //２．データ登録SQL作成
-// $stmt = $pdo->prepare("SELECT * FROM gs_bm_table WHERE country=" . $ctn);
+// $stmt = $pdo->prepare("SELECT * FROM gs_bm_table WHERE country=" . $ctn);//この文だとうまくいかない。原因不明。
 $stmt = $pdo->prepare("SELECT * FROM gs_bm_table WHERE id=" . $id);
-// $stmt = $pdo->prepare("SELECT * FROM gs_bm_table WHERE country = 'Russia'");
+// $stmt = $pdo->prepare("SELECT * FROM gs_bm_table WHERE country = 'Russia'");//この文だとうまくいく。
 // echo $id;
 //実行して結果を代入
 $status = $stmt->execute();
